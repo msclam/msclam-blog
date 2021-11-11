@@ -120,3 +120,97 @@ void heapSort(vector<int> &A, int n) {
 }
 ```
 
+
+
+# （四）冒泡排序
+
+```c++
+void bubbleSort(vector<int>& A, int n) {
+    for (int i = 0; i < n - 1; i ++ ) {
+        for (int j = 0; j < n - i - 1; j ++ ) {
+            if (A[j] > A[j + 1]) {
+                swap(A[j], A[j + 1]);
+            }
+        }
+    }
+}
+```
+
+
+
+# （五）选择排序
+
+```c++
+void selectSort(vector<int> &A, int n) {
+    for (int i = 0; i < n - 1; i ++ ) {
+        int min = i;
+        for (int j = i + 1; j < n; j ++ ) {
+            if (A[j] < A[min]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            swap(A[min], A[i]);
+        }
+    }
+}
+```
+
+
+
+# （六）直接插入
+
+```c++
+void insertSort(vector<int> &A, int n) {
+    for (int i = 0; i < n; i ++ ) {
+        int tmp = A[i], j;
+        for (j = i - 1; j >= 0 && tmp < A[j]; j -- ) {
+            A[j + 1] = A[j];
+        }
+        A[j + 1] = tmp;
+    }
+}
+```
+
+
+
+# （七）折半插入
+
+```c++
+void halfInsertSort(vector<int> &A, int n) {
+    for (int i = 0; i < n; i ++ ) {
+        int tmp = A[i], j;
+        int l = 0, r = i;
+        while (l < r) {
+            int mid = l + r >> 1;
+            if (A[mid] <= tmp) l = mid + 1;
+            else r = mid;
+        }
+        for (j = i - 1; j >= l; j -- ) {
+            A[j + 1] = A[j];
+        }
+        A[j + 1] = tmp;
+    }
+}
+```
+
+
+
+# （八）希尔排序
+
+```c++
+void shellSort(vector<int> &A, int n) {
+    for (int dk = n / 2; dk >= 1; dk /= 2 ) {
+        for (int i = dk; i < n; i ++ ) {
+            if (A[i - dk] > A[i]) {
+                int tmp = A[i], j;
+                for (j = i - dk; j >= 0 && tmp < A[j]; j -= dk ) {
+                    A[j + dk] = A[j];
+                }
+                A[j + dk] = tmp;
+            }
+        }
+    }
+}
+```
+
