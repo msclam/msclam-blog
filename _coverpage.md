@@ -1,4 +1,4 @@
-![logo](_media/icon.jpg)
+<img src="_media/icon.png" alt="logo" style="zoom:18%;" />
 
 
 # msclam-blog
