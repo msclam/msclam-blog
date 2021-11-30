@@ -19,13 +19,14 @@
       name: 'msclam-blog',
       repo: '',
       loadSidebar: true,
+	  subMaxLevel: 3,
       coverpage: true,
       search: {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: [], // or 'auto',
         placeholder: 'Type to search',
         // 搜索标题的最大层级, 1 - 6
-        depth: 2,
+        depth: 3,
         noData: 'No Results!',
       },
       count: {
@@ -33,7 +34,10 @@
         fontsize: '0.9em',
         color: 'rgb(90,90,90)',
         language: 'chinese'
-      }
+      },
+	  alias: {
+		'/.*/_sidebar.md': '/_sidebar.md'
+	  }
     }
   </script>
   <!-- Docsify v4 -->

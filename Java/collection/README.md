@@ -1,12 +1,12 @@
 > 集合：集合是储存对象的长度可变的容器，主要分为单列集合`java.util.Collection`和双列集合`java.util.Map`
 
+#
 # 1 单列集合
 
 ![collection](.\img\collection.png)
 
 
-
-### (1) Collection的方法
+## (1) Collection的方法
 
 ```java
 Collection：单列集合类的根接口，用于存储一系列符合某种规则的元素，它有两个重要的子接口，分别是java.util.List和java.util.Set。其中，List的特点是元素有序、元素可重复。Set的特点是元素无序，而且不可重复。其中List常用有 Vector集合，ArrayList集合 、LinkedList集合 。Set常用有TreeSet和HashSet，LinkedHashSet。
@@ -29,9 +29,9 @@ public Object[] toArray(): 把集合中的元素，存储到数组中。默认�
 
 
 
-## (2) List 元素存取有序、有索引、可重复
+## (2) List (有序、可重复、有索引)
 
-####  适用List的方法
+###  适用List的方法
 
 ```java
 public void add(int index, E element): 将指定的元素，添加到该集合中的指定位置上。
@@ -40,7 +40,7 @@ public E remove(int index): 移除列表中指定位置的元素, 返回的是�
 public E set(int index, E element):用指定元素替换集合中指定位置的元素,返回值的更新前的元素。
 ```
 
-#### ArrayList集合
+### ArrayList集合
 
 ```java
 java.util.ArrayList集合底层结构为动态数组，初始容量10，超出自动扩容。元素增删慢，查找快。
@@ -48,13 +48,13 @@ java.util.ArrayList集合底层结构为动态数组，初始容量10，超出�
 没有什么单独方法，与List通用方法一致。
 ```
 
-#### Vector
+### Vector
 
 ```java
 Vector实现了可变数组，与ArrayList类似 ，但Vector是线程安全的。子类为Stack。
 ```
 
-#### Stack
+### Stack
 
 ```java
 Stack的常用方法
@@ -66,7 +66,7 @@ boolean empty() 测试堆栈是否为空。
 int search(Object o) 返回对象在堆栈中的位置，以 1 为基数。
 ```
 
-#### LinkedList集合
+### LinkedList集合
 
 ```java
 java.util.LinkedList集合数据存储的结构是链表结构。底层为双向链表，方便元素添加、删除的集合。常用于模拟队列、双端队列，堆栈 。
@@ -120,11 +120,11 @@ add/offer、 poll/romove 、peek/element的区别
 
 
 
-## (3) Set
+## (3) Set（无序、不可重复、无索引）
 
 > 在JDK1.8之前，哈希表底层采用数组+链表实现，即使用链表处理冲突，同一hash值的链表都存储在一个链表里。但是当位于一个桶中的元素较多，即hash值相等的元素较多时，通过key值依次查找的效率较低。而JDK1.8中，哈希表存储采用数组+链表+红黑树实现，当链表长度超过阈值（8）时，将链表转换为红黑树，这样大大减少了查找时间。
 
-#### HashSet
+### HashSet
 
 ```java
 HashSet集合，采用哈希表结构存储数据，保证元素唯一性的方式依赖于：hashCode()与equals()方法。
@@ -139,13 +139,13 @@ public boolean isEmpty(): 判断当前集合是否为空。
 public int size(): 返回集合中元素的个数。
 ```
 
-#### LinkedHashSet
+### LinkedHashSet
 
 ```java
 HashSet下面有一个子类LinkedHashSet，它是链表和哈希表组合的一个数据存储结构。
 ```
 
-#### TreeSet
+### TreeSet
 
 ```java
 TreeSet底层为TreeMap，提供了有序的Set集合。
@@ -163,7 +163,7 @@ TreeSet底层为TreeMap，提供了有序的Set集合。
 
 
 
-#### HashMap
+## HashMap
 
 ```java
 HashMap<K,V>：存储数据采用的哈希表结构，元素的存取顺序不能保证一致。由于要保证键的唯一、不重复，需要重写键的hashCode()方法、equals()方法。
@@ -172,7 +172,7 @@ LinkedHashMap<K,V>：HashMap下有个子类LinkedHashMap，存储数据采用的
 
 
 
-#### Map集合常用的方法
+## Map集合常用的方法
 
 ```java
 public V put(K key, V value): 把指定的键与指定的值添加到Map集合中。key已经存在则新的value会覆盖旧的。
@@ -186,7 +186,7 @@ boolean containsKey(Object key) 判断集合中是否包含指定的键。
 
 
 
-#### 遍历Map常用的方法
+## 遍历Map常用的方法
 
 ````java
 public Set keySet()`: 获取Map集合中所有的键，存储到Set遍历中。
