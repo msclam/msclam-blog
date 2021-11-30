@@ -1,6 +1,5 @@
-* [Java学习](java/)
-	* [Java集合相关](java/collection/)
+* [Java学习](Java/)
+	* [Java集合相关](Java/collection/)
 * [Go学习](Go/)
-* [八大排序算法](sort/)
-* [CodeForInterview](codeForInterview/)
-* 
+* [八大排序算法](Sort/)
+* [CodeForInterview](CodeForInterview/)
