@@ -1,6 +1,7 @@
 > 集合：集合是储存对象的长度可变的容器，主要分为单列集合`java.util.Collection`和双列集合`java.util.Map`
 
-#
+# 
+
 # 1 单列集合
 
 ![collection](.\img\collection.png)
